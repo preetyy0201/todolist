@@ -1,5 +1,3 @@
-copy con Dockerfile
-copy con Dockerfile
 FROM eclipse-temurin:21
 
 WORKDIR /app
