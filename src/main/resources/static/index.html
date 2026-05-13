@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: white;
+            margin: 10px auto;
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>My Todo App</h1>
+
+<input type="text" id="taskInput" placeholder="Enter task">
+<button onclick="addTask()">Add</button>
+
+<ul id="taskList"></ul>
+
+<script>
+    function addTask() {
+        let input = document.getElementById("taskInput");
+        let task = input.value;
+
+        if(task === "") {
+            alert("Please enter a task");
+            return;
+        }
+
+        let li = document.createElement("li");
+        li.textContent = task;
+
+        document.getElementById("taskList").appendChild(li);
+
+        input.value = "";
+    }
+</script>
+
+</body>
+</html>
